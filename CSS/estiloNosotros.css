@@ -1,0 +1,21 @@
+/* Hero de la página Nosotros */
+.hero-nosotros { 
+    background-image: url('../Imagenes/hero-nosotros.png'); /* Imagen del hero */
+    height: 40vh; /* Altura tomando de referencia la ventana */
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+.nosotros-contenido {
+    max-width: 800px; /* Ancho máximo */
+    margin: 50px auto; /* Da margen arriba y abajo. Centra el contenido. */
+    padding: 0 20px; /* Desde el interior da margen a los lados */
+    text-align: center; /* Centra el texto */
+}
+
+.nosotros-contenido p {
+    font-size: 18px; /* Tamaño de la fuente para los párrafos */
+    line-height: 1.8; /* Espacio entre líneas de texto */
+    color: #555; /* Color del texto */
+    margin-bottom: 20px; /* Margen inferior  */
+}

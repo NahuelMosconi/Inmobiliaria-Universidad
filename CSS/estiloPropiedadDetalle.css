@@ -1,0 +1,17 @@
+.galeria-propiedad {
+    display: flex; /* Usa flexbox para organizar las imágenes */
+    gap: 20px; /* Espacio entre imágenes de la galería */
+    margin-bottom: 50px; /* Espacio debajo de la galería */
+}
+
+.galeria-propiedad img {
+    height: 250px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio manteniendo proporción */
+    border: 1px solid #ddd; /* Borde gris claro alrededor de las imágenes */
+    border-radius: 5px; /* Esquinas redondeadas de las imágenes */
+}
+
+.precio-detalle {
+    color: #1E73BE; /* Color azul corporativo para el precio */
+    text-align: right; /* Alinea el texto del precio a la derecha */
+}

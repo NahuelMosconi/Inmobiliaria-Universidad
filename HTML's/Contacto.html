@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Triangulo Inmobiliaria</title>
+    <link rel="stylesheet" href="../estiloIndex.css">
+    <link rel="stylesheet" href="../CSS/estiloContacto.css">
+</head>
+<body>
+    <header>
+        <div class="logoTitulo">
+            <img src="../Imagenes/logo.png" alt="Logo de Triangulo Inmobiliaria">
+            <h1>Triangulo Inmobiliaria</h1>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Propiedades.html">Propiedades</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="contacto-contenido">
+            <h2>Estamos para ayudarlo</h2>
+            <p class="subtitulo-contacto">Vender y comprar puede ser muy estresante y elegir el agente adecuado puede ser un proceso difícil. Llámenos para una charla sin compromiso y algunos consejos útiles sobre la venta de su propiedad.</p>
+
+            <form class="formulario-contacto" action="../PHP/contacto.php" method="POST">
+                <div class="form-grupo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                </div>
+                <div class="form-grupo">
+                    <label for="telefono">Número de teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono">
+                </div>
+                <div class="form-grupo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ingrese su mail">
+                </div>
+                <div class="form-grupo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" placeholder="Ingrese su mensaje"></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar mensajes</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="logo-footer">
+                <img src="../Imagenes/logo.png" alt="logo footer">
+            </div>
+            <div class="contacto">
+                <h3>Ubicación / Contacto</h3>
+                <ul>
+                    <li>Calle de Mendoza 123 - Mendoza, Argentina</li>
+                    <li>261 1234567 - 261 891234</li>
+                    <li>trianguloinmobiliaria@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

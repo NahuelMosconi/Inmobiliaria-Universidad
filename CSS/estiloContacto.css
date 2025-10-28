@@ -1,0 +1,49 @@
+.contacto-contenido {
+    max-width: 850px; /* Limita el ancho máximo del contenedor a 850px */
+    margin: 50px auto; /* Margen: 50px arriba/abajo y centrado horizontalmente */
+    padding: 0 20px; /* Espacio interno: 0 arriba/abajo y 20px a los lados */
+}
+
+.contacto-contenido h2 {
+    text-align: left; /* Alinea el texto a la izquierda */
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra para el título */
+    font-size: 28px; /* Tamaño de fuente grande para el título */
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+.subtitulo-contacto {
+    font-family: 'Times New Roman', Times, serif; /* Fuente de la letra */
+    font-size: 18px; /* Tamaño de fuente*/
+    color: #555; /* Color del texto */
+    margin-bottom: 40px; /* Espacio por debajo del subtítulo */
+    line-height: 1.7; /* Espacio entre líneas de texto */
+}
+
+.formulario-contacto {
+    width: 100%; /* El ancho de lo que ocupa el formulario (En porcentaje) */
+}
+
+.form-grupo { 
+    margin-bottom: 20px; /* Espacio con el "campo" del formulario que hay abajo */
+} 
+
+/* Textarea es donde está el mensaje */
+/* input es donde van los otros campos (nombre, email, telefono) */
+.form-grupo input, textarea{
+    width: 100%; /* El campo ocupa todo el ancho posible verticalmente */
+    padding: 12px; /* Espacio que hay dentro del campo */
+    border: 1px solid #ccc; /* Borde al rededor del campo */
+    border-radius: 4px; /* Redondeo de esquinas */
+    font-size: 16px; /* Tamaño de la fuente que hay dentro del campo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente del texto del campo */
+    color: #333; /* Color del texto dentro del campo */
+}
+
+.btn-enviar {
+    width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor "formulario-contacto"*/
+    padding: 15px; /* Espacio interno: alto y ancho dentro del botón (relleno) */
+    background-color: #333; /* Color del botón */
+    color: #fff; /* Color del texto del boton */
+    font-size: 16px; /* Tamaño del texto dentro del botón */
+    margin-top: 10px; /* Espacio por encima del botón para separarlo de elementos de arriba */
+}

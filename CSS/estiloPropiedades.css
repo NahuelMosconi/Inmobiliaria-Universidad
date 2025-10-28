@@ -1,0 +1,25 @@
+.propiedades-listado {
+    max-width: 900px; /* Limita el ancho del div a 900px */
+    margin: 0 auto; /* Centra el contenedor horizontalmente (arriba/abajo 0, automatico a los lados) */
+}
+
+.propiedad {
+    display: flex; /* Flexbox para acomodar los elemento en linea */
+    align-items: center; /* Alinea verticalmente los elementos*/
+    margin-bottom: 40px; /* Espacio que queda abajo */
+    gap: 30px; /* Separación entre los elementos dentro del flex */
+}
+
+.propiedad-imagen {
+    flex: 0 0 300px; /* Flexbox para que no se modifique la imagen y tenga un ancho fijo */
+}
+
+.propiedad-imagen img {
+    border: 1px solid #ccc; /* Borde alrededor de la imagen*/
+    border-radius: 5px; /* Redondea las esquinas del borde */
+}
+
+.propiedad-info {
+    font-size: 16px; /* Tamaño de fuente (antes 1.6rem) */
+    line-height: 1.7; /* Espacio entre líneas de texto */
+}

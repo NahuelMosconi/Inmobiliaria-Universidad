@@ -1,0 +1,144 @@
+/* Reset básico para todos los elementos */
+* { 
+    margin: 0; /* Quita margen por defecto del navegador */
+    padding: 0; /* Quita padding por defecto del navegador */
+    box-sizing: border-box; /* Incluye padding y border dentro del ancho/alto */
+}
+
+/* Estilos base del body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal del sitio */
+    font-size: 16px; /* Tamaño base de texto */
+    line-height: 1.7; /* Altura de línea para mejorar legibilidad */
+    color: #333; /* Color principal del texto */
+}
+
+/* Contenedor central */
+.container {
+    max-width: 1100px; /* Ancho máximo del contenedor */
+    width: 95%; /* Ancho relativo al 95% del viewport o padre */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+}
+
+/* Enlaces por defecto */
+a {
+    text-decoration: none; /* Quita subrayado de los enlaces */
+    color: inherit; /* Hereda el color del elemento padre */
+}
+
+/* Imágenes responsivas */
+img {
+    max-width: 100%; /* Evita que la imagen supere el ancho del contenedor */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
+}
+
+/* Estilos generales para títulos */
+h1, h2, h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Fuente para títulos */
+    margin-bottom: 20px; /* Espacio debajo de los títulos */
+}
+
+h1 {
+    font-size: 22px; /* Tamaño específico para h1 */
+}
+
+h2 {
+    font-size: 32px; /* Tamaño específico para h2 */
+    text-align: center; /* Centra el texto del h2 */
+    margin-top: 40px; /* Espacio arriba del h2 */
+    margin-bottom: 40px; /* Espacio abajo del h2 */
+}
+
+h3 {
+    font-size: 24px; /* Tamaño específico para h3 */
+}
+
+/* HEADER */
+header {
+    background: #1E73BE; /* Color de fondo del header */
+    padding: 10px 0; /* Espacio arriba y abajo dentro del header */
+    color: #fff; /* Color del texto dentro del header */
+    display: flex; /* Usa flexbox para organizar sus hijos */
+    justify-content: space-between; /* Separa elementos a los extremos */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    padding-left: 20px; /* Padding izquierdo extra */
+    padding-right: 20px; /* Padding derecho extra */
+}
+
+.logoTitulo {
+    display: flex; /* Flex para alinear logo y texto en línea */
+    align-items: center; /* Centra verticalmente los elementos internos */
+    gap: 15px; /* Espacio entre logo y título */
+}
+
+.logoTitulo img {
+    height: 60px; /* Altura fija de la imagen del logo */
+}
+
+.nav {
+    list-style: none; /* Quita viñetas si es una lista */
+    display: flex; /* Muestra los items en línea con flexbox */
+    gap: 20px; /* Espacio entre los enlaces del nav */
+}
+
+.nav a {
+    font-size: 18px; /* Tamaño del texto de los enlaces */
+    padding: 10px; /* Espacio alrededor del texto del enlace */
+}
+
+/* HERO */
+.hero {
+    background-image: url(Imagenes/hero-index.png); /* Imagen de fondo del hero */
+    height: 55vh; /* Altura relativa: 55% de la ventana */
+    background-size: cover; /* Escala la imagen para cubrir todo el área */
+    background-position: center; /* Centra la imagen de fondo */
+    display: flex; /* Usa flexbox para alinear contenido interno */
+    justify-content: center; /* Centra horizontalmente el contenido interno */
+    align-items: center; /* Centra verticalmente el contenido interno */
+}
+
+/* INTRO */
+.intro {
+    padding: 40px 0; /* Espacio arriba y abajo de la sección */
+    text-align: center; /* Centra el texto */
+}
+
+.intro p {
+    max-width: 800px; /* Ancho máximo para mejor legibilidad */
+    margin: 0 auto 20px auto; /* Centra el párrafo y añade espacio abajo */
+    font-size: 18px; /* Tamaño de texto para el párrafo */
+    color: #555; /* Color gris para el texto */
+}
+
+/* FOOTER */
+.footer {
+    background: #1E73BE; /* Color de fondo del footer */
+    color: #fff; /* Color del texto */
+    padding: 40px 0; /* Espacio interno arriba y abajo */
+    margin-top: 50px; /* Espacio superior */
+}
+
+.footer-grid {
+    display: flex; /* Usa flexbox para distribuir elementos */
+    justify-content: space-around; /* Espacia los elementos equitativamente */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.logo-footer img {
+    height: 100px; /* Altura del logo en el footer */
+}
+
+.contacto h3 {
+    font-size: 22px; /* Tamaño del título de contacto */
+    margin-bottom: 15px; /* Espacio inferior */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente del título */
+}
+
+.contacto ul {
+    list-style: none; /* Quita los puntos de la lista */
+}
+
+.contacto li {
+    font-size: 16px; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+}
