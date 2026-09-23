@@ -1,0 +1,731 @@
+/* =====================================================================
+   ESTILOS GENERALES
+   Se cargan en todas las páginas del sitio (header, footer, botones,
+   formularios, tarjetas de propiedades, etc.). Cada página agrega
+   después su propio archivo CSS.
+   ===================================================================== */
+
+/* Variables: colores y medidas que se repiten en todo el sitio */
+:root {
+    --azul: #1E73BE;          /* Color corporativo (el mismo del logo) */
+    --azul-oscuro: #155a96;   /* Para el hover de los botones */
+    --azul-claro: #e8f1fa;    /* Fondos suaves */
+    --texto: #333;
+    --texto-suave: #666;
+    --borde: #ddd;
+    --fondo-gris: #f5f7fa;
+    --verde: #2e8b57;
+    --rojo: #c0392b;
+    --radio: 6px;             /* Redondeo de esquinas */
+    --sombra: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --fuente-titulos: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Reset básico para todos los elementos */
+* {
+    margin: 0; /* Quita margen por defecto del navegador */
+    padding: 0; /* Quita padding por defecto del navegador */
+    box-sizing: border-box; /* Incluye padding y border dentro del ancho/alto */
+}
+
+/* Estilos base del body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal del sitio */
+    font-size: 16px; /* Tamaño base de texto */
+    line-height: 1.7; /* Altura de línea para mejorar legibilidad */
+    color: var(--texto); /* Color principal del texto */
+    display: flex; /* Flex en columna para que el footer quede siempre abajo */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* El contenido ocupa el espacio que sobra y empuja el footer hacia abajo */
+body > main {
+    flex: 1 0 auto;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 1100px; /* Ancho máximo del contenedor */
+    width: 95%; /* Ancho relativo */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+}
+
+/* Enlaces por defecto */
+a {
+    text-decoration: none; /* Quita subrayado de los enlaces */
+    color: inherit; /* Hereda el color del elemento padre */
+}
+
+/* Enlaces dentro de párrafos: se distinguen del texto */
+p a {
+    color: var(--azul);
+    text-decoration: underline;
+}
+
+/* Imágenes responsivas */
+img {
+    max-width: 100%; /* Evita que la imagen supere el ancho del contenedor */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
+}
+
+/* Estilos generales para títulos */
+h1, h2, h3 {
+    font-family: var(--fuente-titulos); /* Fuente para títulos */
+    margin-bottom: 20px; /* Espacio debajo de los títulos */
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center; /* Centra el texto del h2 */
+    margin-top: 40px; /* Espacio arriba del h2 */
+    margin-bottom: 40px; /* Espacio abajo del h2 */
+}
+
+h3 {
+    font-size: 24px;
+}
+
+/* Clases de ayuda */
+.centrado { text-align: center; }
+.texto-suave { color: var(--texto-suave); }
+[hidden] { display: none !important; }
+
+/* =====================================================================
+   HEADER
+   ===================================================================== */
+.header {
+    background: var(--azul); /* Color de fondo del header */
+    color: #fff; /* Color del texto dentro del header */
+    position: sticky; /* Queda fijo arriba al hacer scroll */
+    top: 0;
+    z-index: 100; /* Por encima del resto del contenido */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header-contenido {
+    display: flex; /* Usa flexbox para organizar sus hijos */
+    justify-content: space-between; /* Separa logo y menú a los extremos */
+    align-items: center; /* Alinea verticalmente al centro */
+    padding: 10px 20px;
+}
+
+.logoTitulo {
+    display: flex; /* Flex para alinear logo y texto en línea */
+    align-items: center;
+    gap: 15px; /* Espacio entre logo y título */
+    font-family: var(--fuente-titulos);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logoTitulo img {
+    height: 60px; /* Altura fija del logo */
+    width: 60px;
+}
+
+.nav {
+    list-style: none; /* Quita viñetas */
+    display: flex; /* Items en línea */
+    gap: 10px; /* Espacio entre los enlaces */
+    align-items: center;
+}
+
+.nav a {
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: var(--radio);
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+/* Hover y página actual */
+.nav a:hover,
+.nav a.activo {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Número de favoritos al lado del link */
+.contador-favoritos {
+    display: inline-block;
+    background: #fff;
+    color: var(--azul);
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 7px;
+    margin-left: 3px;
+}
+
+/* Botón hamburguesa: oculto en pantallas grandes */
+.menu-boton {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-boton span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Cuando el menú está abierto las tres rayas forman una X */
+.menu-boton[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-boton[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-boton[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* =====================================================================
+   ALERTAS (mensajes de éxito / error)
+   ===================================================================== */
+.alerta {
+    position: relative;
+    padding: 14px 40px 14px 0;
+    font-weight: 500;
+}
+
+.alerta-exito {
+    background: #e3f4ea;
+    color: #1d6b3f;
+    border-bottom: 1px solid #b9e0c8;
+}
+
+.alerta-error {
+    background: #fbe9e7;
+    color: #9b2c1f;
+    border-bottom: 1px solid #f2c4bd;
+}
+
+.alerta-cerrar {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* =====================================================================
+   BOTONES
+   ===================================================================== */
+.boton,
+.btn-enviar {
+    display: inline-block;
+    background: var(--azul);
+    color: #fff;
+    border: 0;
+    border-radius: var(--radio);
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.boton:hover,
+.btn-enviar:hover {
+    background: var(--azul-oscuro);
+}
+
+.boton:active,
+.btn-enviar:active {
+    transform: scale(0.98); /* Pequeño efecto al hacer clic */
+}
+
+.boton-secundario {
+    background: #fff;
+    color: var(--azul);
+    border: 2px solid var(--azul);
+}
+
+.boton-secundario:hover {
+    background: var(--azul-claro);
+}
+
+.boton-claro {
+    background: #fff;
+    color: var(--azul);
+}
+
+.boton-claro:hover {
+    background: var(--azul-claro);
+}
+
+.boton-ancho {
+    width: 100%;
+}
+
+/* Botón deshabilitado mientras se envía un formulario */
+.boton[disabled],
+.btn-enviar[disabled] {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* =====================================================================
+   FORMULARIOS
+   ===================================================================== */
+.form-grupo {
+    margin-bottom: 20px; /* Espacio con el campo de abajo */
+    border: 0;
+}
+
+.form-grupo label,
+.form-grupo legend {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* input es donde van los campos de una línea y textarea el mensaje */
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    width: 100%; /* El campo ocupa todo el ancho posible */
+    padding: 12px; /* Espacio dentro del campo */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--texto);
+    background: #fff;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(30, 115, 190, 0.2);
+}
+
+/* Campo con error (lo marca Laravel o sitio.js) */
+.form-grupo .invalido {
+    border-color: var(--rojo);
+}
+
+.error-campo {
+    color: var(--rojo);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.obligatorio {
+    color: var(--rojo);
+}
+
+/* Contador de caracteres que agrega sitio.js debajo de los textarea */
+.contador-caracteres {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+/* Campo trampa para bots: se saca de la pantalla (no uso display:none
+   porque algunos bots lo detectan y no lo completan) */
+.campo-trampa {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.form-resultado {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: var(--radio);
+}
+
+.form-resultado.exito {
+    background: #e3f4ea;
+    color: #1d6b3f;
+}
+
+.form-resultado.error {
+    background: #fbe9e7;
+    color: #9b2c1f;
+}
+
+/* =====================================================================
+   TARJETAS DE PROPIEDADES
+   ===================================================================== */
+.grilla-propiedades {
+    display: grid;
+    /* Tantas columnas de mínimo 280px como entren */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.tarjeta:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
+
+.tarjeta-imagen {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 3; /* Todas las fotos con la misma proporción */
+    background: var(--fondo-gris);
+}
+
+.tarjeta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen sin deformarla */
+}
+
+.tarjeta-info {
+    padding: 15px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tarjeta-info h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.tarjeta-info h3 a:hover {
+    color: var(--azul);
+}
+
+.tarjeta-tipo {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--texto-suave);
+}
+
+.tarjeta-resumen {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tarjeta-datos {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 14px;
+    color: var(--texto-suave);
+    margin-bottom: 10px;
+}
+
+.tarjeta-precio {
+    margin-top: auto; /* Empuja el precio al fondo de la tarjeta */
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--azul);
+}
+
+/* Etiqueta "Venta" / "Alquiler" sobre la foto */
+.etiqueta {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.tarjeta-imagen .etiqueta {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.etiqueta-venta { background: var(--azul); }
+.etiqueta-alquiler { background: var(--verde); }
+
+/* Corazón de favoritos */
+.boton-favorito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.9);
+    color: #bbb;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.boton-favorito:hover {
+    transform: scale(1.1);
+}
+
+.boton-favorito.activo {
+    color: #e0245e; /* Rojo cuando está guardada */
+}
+
+/* =====================================================================
+   PAGINACIÓN
+   ===================================================================== */
+.paginacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin: 40px 0 10px;
+}
+
+.paginacion-item {
+    padding: 8px 14px;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    background: #fff;
+}
+
+a.paginacion-item:hover {
+    border-color: var(--azul);
+    color: var(--azul);
+}
+
+.paginacion-item.actual {
+    background: var(--azul);
+    border-color: var(--azul);
+    color: #fff;
+}
+
+.paginacion-item.deshabilitado {
+    color: #aaa;
+}
+
+/* =====================================================================
+   PÁGINAS DE MENSAJE (gracias, errores 404, 500...)
+   ===================================================================== */
+.pagina-mensaje {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.pagina-mensaje p {
+    font-size: 18px;
+    color: var(--texto-suave);
+}
+
+.codigo-error {
+    font-size: 80px !important;
+    font-weight: bold;
+    color: var(--azul) !important;
+    line-height: 1;
+    margin-top: 20px;
+}
+
+.pagina-mensaje-botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.sin-resultados {
+    text-align: center;
+    background: var(--fondo-gris);
+    border-radius: var(--radio);
+    padding: 40px 20px;
+}
+
+.sin-resultados p {
+    margin-bottom: 10px;
+}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.footer {
+    background: var(--azul);
+    color: #fff;
+    padding: 40px 0 0;
+    margin-top: 50px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-around; /* Espacia los elementos equitativamente */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.logo-footer img {
+    height: 100px;
+    width: 100px;
+}
+
+.footer-columna h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: inherit;
+}
+
+.footer-columna ul {
+    list-style: none;
+}
+
+.footer-columna li {
+    margin-bottom: 8px;
+}
+
+.footer-columna a:hover {
+    text-decoration: underline;
+}
+
+.footer-inferior {
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.footer-inferior a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-flotante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 90;
+    transition: transform 0.2s;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.08);
+}
+
+/* Botón de WhatsApp dentro de las páginas (contacto y detalle) */
+.boton-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: var(--radio);
+    background: #25d366;
+    color: #fff;
+    font-weight: 600;
+}
+
+.boton-whatsapp:hover {
+    background: #1ebe5a;
+}
+
+.boton-whatsapp svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* =====================================================================
+   RESPONSIVE (celulares y tablets)
+   ===================================================================== */
+@media (max-width: 900px) {
+    /* Se muestra la hamburguesa y el menú pasa a ser desplegable */
+    .menu-boton {
+        display: block;
+    }
+
+    #menu-principal {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--azul);
+        max-height: 0; /* Cerrado */
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    #menu-principal.abierto {
+        max-height: 400px; /* Abierto (sitio.js agrega la clase) */
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 20px;
+    }
+
+    .nav a {
+        display: block;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 26px;
+        margin: 30px 0;
+    }
+
+    .logoTitulo {
+        font-size: 18px;
+    }
+
+    .logoTitulo img {
+        height: 45px;
+        width: 45px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

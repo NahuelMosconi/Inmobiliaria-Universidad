@@ -1,0 +1,88 @@
+/* =====================================================================
+   PÁGINA DE CONTACTO
+   ===================================================================== */
+
+.contacto-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px; /* Formulario y datos de la oficina */
+    gap: 50px;
+    margin: 50px auto;
+    max-width: 1000px;
+}
+
+.contacto-contenido h2 {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra para el título */
+    font-size: 28px;
+    margin: 0 0 15px;
+}
+
+.subtitulo-contacto {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px; /* Espacio por debajo del subtítulo */
+    line-height: 1.7;
+}
+
+.consulta-sobre {
+    background: var(--azul-claro);
+    padding: 10px 15px;
+    border-radius: var(--radio);
+    margin-bottom: 20px;
+}
+
+.formulario-contacto {
+    width: 100%;
+}
+
+.btn-enviar {
+    background-color: #333; /* Mismo color de botón que en la primera versión */
+}
+
+.btn-enviar:hover {
+    background-color: #111;
+}
+
+/* Caja con los datos de la oficina */
+.contacto-datos {
+    background: var(--fondo-gris);
+    border-radius: var(--radio);
+    padding: 25px;
+    align-self: start;
+}
+
+.contacto-datos h3 {
+    font-size: 20px;
+}
+
+.contacto-datos ul {
+    list-style: none;
+}
+
+.contacto-datos li {
+    margin-bottom: 15px;
+}
+
+.contacto-datos strong {
+    display: block;
+    font-size: 14px;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+}
+
+.contacto-datos a {
+    color: var(--azul);
+}
+
+.contacto-datos .boton-whatsapp {
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .contacto-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 30px auto;
+    }
+}

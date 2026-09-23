@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="#eef2f6"/>
+    <path d="M200 95 140 145v70h40v-40h40v40h40v-70z" fill="none" stroke="#b8c4d0" stroke-width="8" stroke-linejoin="round"/>
+    <text x="200" y="255" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#8a99a8" text-anchor="middle">Sin fotos</text>
+</svg>

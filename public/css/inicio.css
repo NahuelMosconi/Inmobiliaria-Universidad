@@ -1,0 +1,164 @@
+/* =====================================================================
+   PÁGINA DE INICIO
+   ===================================================================== */
+
+/* HERO: la imagen ya trae el nombre de la inmobiliaria escrito */
+.hero {
+    background-image: url('../img/hero-inicio.jpg'); /* Imagen de fondo del hero */
+    /* 60% de la ventana, pero nunca más alto que la mitad del ancho: así en
+       pantallas muy altas la imagen no se agranda tanto que se corta el texto */
+    height: min(60vh, 52vw);
+    min-height: 380px;
+    background-size: cover; /* Escala la imagen para cubrir todo el área */
+    background-position: center; /* Centra la imagen de fondo */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el buscador */
+    align-items: flex-end; /* El buscador va abajo para no tapar el texto de la imagen */
+    padding: 0 15px 40px;
+}
+
+/* Buscador rápido sobre el hero */
+.buscador {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 20px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    width: 100%;
+    max-width: 850px;
+}
+
+.buscador-campo {
+    flex: 1;
+}
+
+.buscador-campo label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto-suave);
+    margin-bottom: 4px;
+}
+
+.buscador select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #fff;
+}
+
+.buscador .boton {
+    padding: 11px 30px;
+}
+
+/* INTRO */
+.intro {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.intro p {
+    max-width: 800px; /* Ancho máximo para mejor legibilidad */
+    margin: 0 auto 20px auto;
+    font-size: 18px;
+    color: #555;
+}
+
+/* DESTACADAS */
+.destacadas {
+    background: var(--fondo-gris);
+    padding: 10px 0 50px;
+}
+
+.destacadas .centrado {
+    margin-top: 35px;
+}
+
+/* BENEFICIOS */
+.beneficios {
+    padding: 60px 0 20px;
+}
+
+.beneficios-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.beneficio-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.beneficio h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.beneficio p {
+    color: var(--texto-suave);
+}
+
+/* LLAMADO A LA ACCIÓN */
+.cta {
+    margin-top: 50px;
+    background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.cta h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+/* El footer ya tiene margen arriba, lo saco para que quede pegado al CTA */
+.cta + .footer {
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    /* En celular la imagen se muestra entera (a lo ancho) para que no se corte
+       el texto que trae, y el buscador queda debajo del texto */
+    .hero {
+        height: auto;
+        min-height: 0;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-color: #d3ccc4; /* Mismo tono que la foto, para el espacio de abajo */
+        padding-top: 34vw;
+        padding-bottom: 25px;
+    }
+
+    /* El buscador pasa a una columna */
+    .buscador {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buscador .boton {
+        width: 100%;
+    }
+}

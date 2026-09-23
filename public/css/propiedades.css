@@ -1,0 +1,109 @@
+/* =====================================================================
+   LISTADO DE PROPIEDADES (y página de favoritos)
+   ===================================================================== */
+
+.propiedades-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Filtros a la izquierda, resultados a la derecha */
+    gap: 35px;
+    align-items: start;
+}
+
+/* ---------- Filtros ---------- */
+.filtros {
+    position: sticky; /* Los filtros acompañan al hacer scroll */
+    top: 100px;
+    background: var(--fondo-gris);
+    border-radius: var(--radio);
+    padding: 20px;
+}
+
+.filtros .form-grupo {
+    margin-bottom: 15px;
+}
+
+.filtros .form-grupo input,
+.filtros .form-grupo select {
+    padding: 9px;
+    font-size: 15px;
+}
+
+.rango-precio {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.limpiar-filtros {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: var(--azul);
+    font-size: 15px;
+}
+
+/* El botón para mostrar/ocultar filtros solo aparece en celulares */
+.filtros-toggle {
+    display: none;
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ---------- Resultados ---------- */
+.resultados-barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-orden {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-orden select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.titulo-propiedades {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 850px) {
+    .propiedades-layout {
+        grid-template-columns: 1fr; /* Todo en una sola columna */
+    }
+
+    .filtros {
+        position: static;
+        padding: 10px;
+    }
+
+    .filtros-toggle {
+        display: block;
+    }
+
+    /* En celular los filtros arrancan cerrados (sitio.js les agrega la clase "abierto") */
+    .filtros-form {
+        display: none;
+        padding: 15px 5px 5px;
+    }
+
+    .filtros-form.abierto {
+        display: block;
+    }
+}

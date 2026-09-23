@@ -1,0 +1,50 @@
+/* =====================================================================
+   PÁGINA NOSOTROS
+   ===================================================================== */
+
+/* Hero de la página Nosotros */
+.hero-nosotros {
+    background-image: url('../img/hero-nosotros.jpg'); /* Imagen del hero */
+    height: 40vh; /* Altura tomando de referencia la ventana */
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+.nosotros-contenido {
+    max-width: 800px; /* Ancho máximo */
+    margin: 50px auto; /* Da margen arriba y abajo. Centra el contenido. */
+    padding: 0 20px;
+    text-align: center;
+}
+
+.nosotros-contenido p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Tarjetas de misión, visión y valores */
+.valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.valor {
+    background: var(--fondo-gris);
+    border-top: 4px solid var(--azul);
+    border-radius: var(--radio);
+    padding: 25px;
+    text-align: center;
+}
+
+.valor h3 {
+    color: var(--azul);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.valor p {
+    color: var(--texto-suave);
+}

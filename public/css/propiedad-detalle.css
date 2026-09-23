@@ -1,0 +1,352 @@
+/* =====================================================================
+   DETALLE DE UNA PROPIEDAD
+   ===================================================================== */
+
+.detalle h2 {
+    text-align: left;
+    margin: 8px 0 5px;
+}
+
+.aviso-borrador {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #fff4d6;
+    border: 1px solid #f0d58a;
+    border-radius: var(--radio);
+}
+
+/* Migas de pan: Inicio / Propiedades / ... */
+.migas {
+    font-size: 14px;
+    color: var(--texto-suave);
+    margin: 25px 0 15px;
+}
+
+.migas a {
+    color: var(--azul);
+}
+
+/* ---------- Encabezado con título y precio ---------- */
+.detalle-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.detalle-localidad {
+    color: var(--texto-suave);
+}
+
+.detalle-precio-caja {
+    text-align: right;
+}
+
+.precio-detalle {
+    color: var(--azul); /* Color corporativo para el precio */
+    font-size: 30px;
+    font-weight: bold;
+    font-family: var(--fuente-titulos);
+    line-height: 1.2;
+}
+
+.expensas {
+    color: var(--texto-suave);
+    font-size: 15px;
+}
+
+.detalle-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* El corazón en el detalle va con texto y no flotando sobre una foto */
+.boton-favorito-texto,
+.boton-compartir {
+    position: static;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 15px;
+    border: 1px solid var(--borde);
+    background: #fff;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.boton-favorito-texto span,
+.boton-compartir {
+    color: var(--texto);
+}
+
+/* ---------- Galería ---------- */
+.galeria-propiedad {
+    margin-bottom: 35px;
+}
+
+.galeria-principal {
+    position: relative;
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    cursor: zoom-in;
+    border-radius: var(--radio);
+    overflow: hidden;
+    background: var(--fondo-gris);
+}
+
+.galeria-principal img,
+.galeria-vacia {
+    width: 100%;
+    height: 480px;
+    object-fit: cover; /* Ajusta la imagen para cubrir el espacio manteniendo proporción */
+    border-radius: var(--radio);
+}
+
+.galeria-cantidad {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.galeria-miniaturas {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    overflow-x: auto; /* Si hay muchas fotos se puede deslizar */
+    padding-bottom: 5px;
+}
+
+.galeria-miniaturas button {
+    flex: 0 0 110px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.galeria-miniaturas button:hover,
+.galeria-miniaturas button.activa {
+    opacity: 1;
+    border-color: var(--azul);
+}
+
+.galeria-miniaturas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Visor a pantalla completa (lo crea galeria.js) */
+.visor {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visor img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.visor button {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 0;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.visor button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.visor-cerrar { top: 20px; right: 20px; }
+.visor-anterior { left: 20px; top: 50%; transform: translateY(-50%); }
+.visor-siguiente { right: 20px; top: 50%; transform: translateY(-50%); }
+
+.visor-contador {
+    position: absolute;
+    bottom: 20px;
+    color: #fff;
+    font-size: 15px;
+}
+
+/* ---------- Información ---------- */
+.detalle-grilla {
+    display: grid;
+    grid-template-columns: 1fr 360px; /* Info a la izquierda y formulario a la derecha */
+    gap: 40px;
+    align-items: start;
+}
+
+.detalle-info section {
+    margin-bottom: 35px;
+}
+
+.detalle-info h3 {
+    font-size: 22px;
+    border-bottom: 2px solid var(--azul-claro);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.detalle-info h4 {
+    margin: 20px 0 10px;
+}
+
+.descripcion {
+    color: #444;
+}
+
+/* Datos principales en recuadros */
+.datos-principales {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.datos-principales li {
+    background: var(--fondo-gris);
+    border-radius: var(--radio);
+    padding: 10px 16px;
+    color: var(--texto-suave);
+}
+
+.datos-principales strong {
+    display: block;
+    font-size: 20px;
+    color: var(--texto);
+}
+
+.caracteristicas {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 8px 20px;
+}
+
+/* Extras como "chips" */
+.extras {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.extras li {
+    background: var(--azul-claro);
+    color: var(--azul-oscuro);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+.extras li::before {
+    content: "✓ ";
+}
+
+.mapa {
+    width: 100%;
+    height: 320px;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    margin-top: 10px;
+}
+
+.link-mapa {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--azul);
+}
+
+/* ---------- Caja de consulta ---------- */
+.detalle-contacto {
+    position: sticky;
+    top: 100px;
+}
+
+.caja-consulta {
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 25px;
+    box-shadow: var(--sombra);
+    background: #fff;
+}
+
+.caja-consulta h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.caja-consulta > p {
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+}
+
+.caja-consulta .form-grupo {
+    margin-bottom: 14px;
+}
+
+.caja-consulta .form-grupo input,
+.caja-consulta .form-grupo textarea {
+    padding: 10px;
+    font-size: 15px;
+}
+
+/* ---------- Similares ---------- */
+.similares {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--borde);
+}
+
+@media (max-width: 900px) {
+    .detalle-grilla {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-contacto {
+        position: static;
+    }
+
+    .galeria-principal img,
+    .galeria-vacia {
+        height: 300px;
+    }
+
+    .detalle-precio-caja {
+        text-align: left;
+    }
+
+    .detalle-acciones {
+        justify-content: flex-start;
+    }
+}
